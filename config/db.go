@@ -64,3 +64,5 @@ var user1 = whatsauth.LoginInfo{
 	Uuid:     "besan_users",
 	Login:    "2md5",
 }
+
+
