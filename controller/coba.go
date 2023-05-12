@@ -103,7 +103,7 @@ func GetAllTema(c *fiber.Ctx) error {
 }
 
 func InsertData(c *fiber.Ctx) error {
-	db := config.Ulbimongoconn
+	db := config.Ulbimongoconn2
 	var presensi inimodel.Presensi
 	if err := c.BodyParser(&presensi); err != nil {
 		return c.Status(http.StatusInternalServerError).JSON(fiber.Map{
