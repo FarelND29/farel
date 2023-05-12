@@ -21,4 +21,5 @@ func Web(page *fiber.App) {
 	page.Get("/all-mahasiswa", controller.GetAllMahasiswa)
 	page.Get("/all-orangtua", controller.GetAllOrangTua)
 	page.Get("/all-tema", controller.GetAllTema)
+	page.Post("/ins", controller.InsertData)
 }
