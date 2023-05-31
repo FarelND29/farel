@@ -4,6 +4,7 @@ import (
 	"github.com/FarelND29/farel/controller"
 
 	"github.com/gofiber/fiber/v2"
+	"github.com/gofiber/swagger"
 	"github.com/gofiber/websocket/v2"
 )
 
@@ -22,4 +23,5 @@ func Web(page *fiber.App) {
 	page.Get("/all-orangtua", controller.GetAllOrangTua)
 	page.Get("/all-tema", controller.GetAllTema)
 	page.Post("/ins", controller.InsertData)
+	page.Get("/docs/*", swagger.HandlerDefault)
 }

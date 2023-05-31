@@ -13,6 +13,8 @@ import (
 	"github.com/FarelND29/farel/url"
 
 	"github.com/gofiber/fiber/v2"
+
+	_ "github.com/FarelND29/farel/docs"
 )
 
 func main() {
@@ -22,3 +24,4 @@ func main() {
 	url.Web(site)
 	log.Fatal(site.Listen(musik.Dangdut()))
 }
+
