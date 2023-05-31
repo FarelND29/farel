@@ -17,17 +17,17 @@ import (
 	_ "github.com/FarelND29/farel/docs"
 )
 
-// @title Fiber Example API
+// @title Swagger Example API
 // @version 1.0
-// @description This is a sample swagger for Fiber
+// @description This is a sample server
 
-// @termsOfService http://swagger.io/terms/
 // @contact.name API Support
-// @contact.email fiber@swagger.io
-// @license.name Apache 2.0
-// @license.url http://www.apache.org/licenses/LICENSE-2.0.html
-// @host localhost:8080
+// @contact.url https://github.com/FarelND29
+// @contact.email fareldazz123@gmail.com
+
+// @host farel-app.herokuapp.com
 // @BasePath /
+// @schemes http https
 
 func main() {
 	go whatsauth.RunHub()
