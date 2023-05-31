@@ -122,6 +122,17 @@ func GetAllTema(c *fiber.Ctx) error {
 	return c.JSON(ps)
 }
 
+// InsertData godoc
+// @Summary Insert data presensi.
+// @Description Input data presensi.
+// @Tags Presensi
+// @Accept json
+// @Produce json
+// @Param request body Presensi true "Payload Body [RAW]"
+// @Success 200 {object} Presensi
+// @Failure 400
+// @Failure 500
+// @Router /ins [post]
 func InsertData(c *fiber.Ctx) error {
 	db := config.Ulbimongoconn2
 	var presensi inimodel.Presensi
