@@ -26,4 +26,6 @@ func Web(page *fiber.App) {
 	page.Get("/all-tema", controller.GetAllTema)
 	page.Post("/ins", controller.InsertData)
 	page.Get("/docs/*", swagger.HandlerDefault)
+	page.Put("/upd/:id", controller.UpdateData)
+	page.Delete("/delete/:id", controller.DeletePresensiByID)
 }
