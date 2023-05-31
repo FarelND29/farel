@@ -1,15 +1,87 @@
 basePath: /
-host: localhost:8080
+definitions:
+  controller.JamKerja:
+    properties:
+      durasi:
+        type: integer
+      gmt:
+        type: integer
+      hari:
+        items:
+          type: string
+        type: array
+      jam_keluar:
+        type: string
+      jam_masuk:
+        type: string
+      piket_tim:
+        type: string
+      shift:
+        type: integer
+    type: object
+  controller.Karyawan:
+    properties:
+      _id:
+        type: string
+      hari_kerja:
+        items:
+          type: string
+        type: array
+      jabatan:
+        type: string
+      jam_kerja:
+        items:
+          $ref: '#/definitions/controller.JamKerja'
+        type: array
+      nama:
+        type: string
+      phone_number:
+        type: string
+    type: object
+  controller.Presensi:
+    properties:
+      _id:
+        type: string
+      biodata:
+        $ref: '#/definitions/controller.Karyawan'
+      checkin:
+        description: Datetime     primitive.DateTime `bson:"datetime,omitempty" json:"datetime,omitempty"`
+        type: string
+      latitude:
+        type: number
+      location:
+        type: string
+      longitude:
+        type: number
+      phone_number:
+        type: string
+    type: object
+host: farel-app.herokuapp.com
 info:
   contact:
-    email: fiber@swagger.io
+    email: fareldazz123@gmail.com
     name: API Support
-  description: This is a sample swagger for Fiber
-  license:
-    name: Apache 2.0
-    url: http://www.apache.org/licenses/LICENSE-2.0.html
-  termsOfService: http://swagger.io/terms/
-  title: Fiber Example API
+    url: https://github.com/FarelND29
+  description: This is a sample server
+  title: Swagger Example API
   version: "1.0"
-paths: {}
+paths:
+  /presensi:
+    get:
+      consumes:
+      - application/json
+      description: Mengambil semua data presensi.
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/controller.Presensi'
+      summary: Get All Data Presensi.
+      tags:
+      - Presensi
+schemes:
+- http
+- https
 swagger: "2.0"

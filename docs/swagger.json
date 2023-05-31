@@ -1,20 +1,131 @@
 {
+    "schemes": [
+        "http",
+        "https"
+    ],
     "swagger": "2.0",
     "info": {
-        "description": "This is a sample swagger for Fiber",
-        "title": "Fiber Example API",
-        "termsOfService": "http://swagger.io/terms/",
+        "description": "This is a sample server",
+        "title": "Swagger Example API",
         "contact": {
             "name": "API Support",
-            "email": "fiber@swagger.io"
-        },
-        "license": {
-            "name": "Apache 2.0",
-            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+            "url": "https://github.com/FarelND29",
+            "email": "fareldazz123@gmail.com"
         },
         "version": "1.0"
     },
-    "host": "localhost:8080",
+    "host": "farel-app.herokuapp.com",
     "basePath": "/",
-    "paths": {}
+    "paths": {
+        "/presensi": {
+            "get": {
+                "description": "Mengambil semua data presensi.",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Presensi"
+                ],
+                "summary": "Get All Data Presensi.",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/controller.Presensi"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "controller.JamKerja": {
+            "type": "object",
+            "properties": {
+                "durasi": {
+                    "type": "integer"
+                },
+                "gmt": {
+                    "type": "integer"
+                },
+                "hari": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "jam_keluar": {
+                    "type": "string"
+                },
+                "jam_masuk": {
+                    "type": "string"
+                },
+                "piket_tim": {
+                    "type": "string"
+                },
+                "shift": {
+                    "type": "integer"
+                }
+            }
+        },
+        "controller.Karyawan": {
+            "type": "object",
+            "properties": {
+                "_id": {
+                    "type": "string"
+                },
+                "hari_kerja": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "jabatan": {
+                    "type": "string"
+                },
+                "jam_kerja": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/controller.JamKerja"
+                    }
+                },
+                "nama": {
+                    "type": "string"
+                },
+                "phone_number": {
+                    "type": "string"
+                }
+            }
+        },
+        "controller.Presensi": {
+            "type": "object",
+            "properties": {
+                "_id": {
+                    "type": "string"
+                },
+                "biodata": {
+                    "$ref": "#/definitions/controller.Karyawan"
+                },
+                "checkin": {
+                    "description": "Datetime     primitive.DateTime `bson:\"datetime,omitempty\" json:\"datetime,omitempty\"`",
+                    "type": "string"
+                },
+                "latitude": {
+                    "type": "number"
+                },
+                "location": {
+                    "type": "string"
+                },
+                "longitude": {
+                    "type": "number"
+                },
+                "phone_number": {
+                    "type": "string"
+                }
+            }
+        }
+    }
 }
