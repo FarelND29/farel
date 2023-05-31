@@ -51,6 +51,7 @@ func GetAllPresensi(c *fiber.Ctx) error {
 // @Failure 404
 // @Failure 500
 // @Router /presensi/{id} [get]
+
 func GetPresensiID(c *fiber.Ctx) error {
 	id := c.Params("id")
 	if id == "" {
