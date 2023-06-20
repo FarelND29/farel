@@ -97,13 +97,13 @@ func GetOrangTua(c *fiber.Ctx) error {
 	return c.JSON(ps)
 }
 
-func GetDosenWali(c *fiber.Ctx) error {
-	ps := inimodul.GetDosenWaliFromNamaDosen(config.Ulbimongoconn, "dosenwali", "fatimah")
+func GetTema(c *fiber.Ctx) error {
+	ps := inimodul.GetTemaFromNamaTema(config.Ulbimongoconn, "tema", "Kewirausahaan")
 	return c.JSON(ps)
 }
 
-func GetTema(c *fiber.Ctx) error {
-	ps := inimodul.GetTemaFromNamaTema(config.Ulbimongoconn, "tema", "Kewirausahaan")
+func GetDosenWali(c *fiber.Ctx) error {
+	ps := inimodul.GetDosenWaliFromNamaDosen(config.Ulbimongoconn, "dosenwali", "fatimah")
 	return c.JSON(ps)
 }
 
@@ -122,13 +122,13 @@ func GetAllOrangTua(c *fiber.Ctx) error {
 	return c.JSON(ps)
 }
 
-func GetAllDosenwali(c *fiber.Ctx) error {
-	ps := inimodul.GetAllDosenWali(config.Ulbimongoconn, "dosenwali")
+func GetAllTema(c *fiber.Ctx) error {
+	ps := inimodul.GetAllTema(config.Ulbimongoconn, "tema")
 	return c.JSON(ps)
 }
 
-func GetAllTema(c *fiber.Ctx) error {
-	ps := inimodul.GetAllTema(config.Ulbimongoconn, "tema")
+func GetAllDosenwali(c *fiber.Ctx) error {
+	ps := inimodul.GetAllDosenWali(config.Ulbimongoconn, "dosenwali")
 	return c.JSON(ps)
 }
 
