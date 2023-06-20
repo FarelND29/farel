@@ -97,6 +97,11 @@ func GetOrangTua(c *fiber.Ctx) error {
 	return c.JSON(ps)
 }
 
+func GetDosenWali(c *fiber.Ctx) error {
+	ps := inimodul.GetDosenWaliFromNamaDosen(config.Ulbimongoconn, "dosenwali", "fatimah")
+	return c.JSON(ps)
+}
+
 func GetTema(c *fiber.Ctx) error {
 	ps := inimodul.GetTemaFromNamaTema(config.Ulbimongoconn, "tema", "Kewirausahaan")
 	return c.JSON(ps)
@@ -114,6 +119,11 @@ func GetAllMahasiswa(c *fiber.Ctx) error {
 
 func GetAllOrangTua(c *fiber.Ctx) error {
 	ps := inimodul.GetAllOrangTua(config.Ulbimongoconn, "orangtua")
+	return c.JSON(ps)
+}
+
+func GetAllDosenwali(c *fiber.Ctx) error {
+	ps := inimodul.GetAllDosenWali(config.Ulbimongoconn, "dosenwali")
 	return c.JSON(ps)
 }
 
