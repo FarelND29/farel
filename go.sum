@@ -16,6 +16,8 @@ github.com/FarelND29/monitoring_orang_tua v0.0.10 h1:S4pwyrjk1whXgDkQmYZUGp4/3O2
 github.com/FarelND29/monitoring_orang_tua v0.0.10/go.mod h1:d22miaNHWOpMP0SsRgoL/91dQoJXSENPS71p15j9Ibg=
 github.com/FarelND29/monitoring_orang_tua v0.0.11 h1:vaU5FvTmu5vdJbUTeMgLvUBc1HggBPd0NSrRR6vB2PE=
 github.com/FarelND29/monitoring_orang_tua v0.0.11/go.mod h1:d22miaNHWOpMP0SsRgoL/91dQoJXSENPS71p15j9Ibg=
+github.com/FarelND29/monitoring_orang_tua v0.0.12 h1:k1G5cQE+afqjTmtKYNWeUi6XXPhGsU8MWqsSTFXPbeg=
+github.com/FarelND29/monitoring_orang_tua v0.0.12/go.mod h1:d22miaNHWOpMP0SsRgoL/91dQoJXSENPS71p15j9Ibg=
 github.com/KyleBanks/depth v1.2.1 h1:5h8fQADFrWtarTdtDudMmGsC7GPbOAu6RVB3ffsVFHc=
 github.com/KyleBanks/depth v1.2.1/go.mod h1:jzSb9d0L43HxTQfT+oSA1EEp2q+ne2uh6XgeJcm8brE=
 github.com/PuerkitoBio/purell v1.1.1/go.mod h1:c11w/QuzBsJSee3cPx9rAFu61PvFxuPbtSwDGJws/X0=
