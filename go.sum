@@ -8,8 +8,6 @@ github.com/Azure/azure-sdk-for-go/sdk/azidentity v1.2.1/go.mod h1:gLa1CL2RNE4s7M
 github.com/Azure/azure-sdk-for-go/sdk/internal v1.0.0/go.mod h1:eWRD7oawr1Mu1sLCawqVc0CUiF43ia3qQMxLscsKQ9w=
 github.com/AzureAD/microsoft-authentication-library-for-go v0.8.1/go.mod h1:4qFor3D/HDsvBME35Xy9rwW9DecL+M2sNw1ybjPtwA0=
 github.com/BurntSushi/toml v0.3.1/go.mod h1:xHWCNGjB5oqiDr8zfno3MHue2Ht5sIBksp03qcyfWMU=
-github.com/FarelND29/monitoring_orang_tua v0.0.2 h1:yHGSg4eznQZpbMPq6XwGT6I/GCFVwTUE7meKBHHT0EE=
-github.com/FarelND29/monitoring_orang_tua v0.0.2/go.mod h1:d22miaNHWOpMP0SsRgoL/91dQoJXSENPS71p15j9Ibg=
 github.com/FarelND29/monitoring_orang_tua v0.0.6 h1:IsBeDwVR0DjbS89yilvY3uaXea6W9To+19EV3p46M/Y=
 github.com/FarelND29/monitoring_orang_tua v0.0.6/go.mod h1:d22miaNHWOpMP0SsRgoL/91dQoJXSENPS71p15j9Ibg=
 github.com/KyleBanks/depth v1.2.1 h1:5h8fQADFrWtarTdtDudMmGsC7GPbOAu6RVB3ffsVFHc=

@@ -20,7 +20,7 @@ var DBUlbimariainfo = atdb.DBInfo{
 
 var DBUlbimongoinfo = atdb.DBInfo{
 	DBString: MongoString,
-	DBName:   "farel_db",
+	DBName:   "monitoring_db",
 }
 
 var DBUlbimongoinfo2 = atdb.DBInfo{
@@ -71,5 +71,3 @@ var user1 = whatsauth.LoginInfo{
 	Uuid:     "besan_users",
 	Login:    "2md5",
 }
-
-

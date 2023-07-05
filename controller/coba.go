@@ -132,6 +132,11 @@ func GetAllTema(c *fiber.Ctx) error {
 	return c.JSON(ps)
 }
 
+func GetAllDosenwali(c *fiber.Ctx) error {
+	ps := inimodul.GetAllDosenWali(config.Ulbimongoconn, "dosenwali")
+	return c.JSON(ps)
+}
+
 // InsertData godoc
 // @Summary Insert data presensi.
 // @Description Input data presensi.
