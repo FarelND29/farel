@@ -3,17 +3,18 @@ package controller
 import (
 	"errors"
 	"fmt"
+	"net/http"
+
+	"github.com/FarelND29/farel/config"
+	inimodel1 "github.com/FarelND29/monitoring_orang_tua/model"
+	inimodul "github.com/FarelND29/monitoring_orang_tua/module"
 	"github.com/aiteung/musik"
 	cek "github.com/aiteung/presensi"
 	"github.com/gofiber/fiber/v2"
-	inimodel1 "github.com/FarelND29/monitoring_orang_tua/model"
-	inimodul "github.com/FarelND29/monitoring_orang_tua/module"
 	inimodel "github.com/indrariksa/be_presensi/model"
 	inimodul1 "github.com/indrariksa/be_presensi/module"
-	"github.com/FarelND29/farel/config"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 	"go.mongodb.org/mongo-driver/mongo"
-	"net/http"
 )
 
 func Homepage(c *fiber.Ctx) error {
@@ -479,7 +480,7 @@ func UpdateDataMonitoring(c *fiber.Ctx) error {
 	}
 
 	// Call the UpdatePresensi function with the parsed ID and the Presensi object
-	err = inimodul.UpdateMonitoring(db, "presensi",
+	err = inimodul.UpdateMonitoring(db, "monitoring",
 		objectID,
 		monitoring.OrangTua,
 		monitoring.Tema,
