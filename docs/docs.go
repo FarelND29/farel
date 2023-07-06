@@ -225,7 +225,7 @@ const docTemplate = `{
         },
         "/upd/{id}": {
             "put": {
-                "description": "Ubah data presensi.",
+                "description": "Ubah data monitoring.",
                 "consumes": [
                     "application/json"
                 ],
@@ -233,9 +233,9 @@ const docTemplate = `{
                     "application/json"
                 ],
                 "tags": [
-                    "Presensi"
+                    "Monitoring"
                 ],
-                "summary": "Update data presensi.",
+                "summary": "Update data monitoring.",
                 "parameters": [
                     {
                         "type": "string",
@@ -250,7 +250,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/controller.Presensi"
+                            "$ref": "#/definitions/controller.Monitoring"
                         }
                     }
                 ],
@@ -258,7 +258,7 @@ const docTemplate = `{
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/controller.Presensi"
+                            "$ref": "#/definitions/controller.Monitoring"
                         }
                     },
                     "400": {

@@ -292,7 +292,7 @@ paths:
     put:
       consumes:
       - application/json
-      description: Ubah data presensi.
+      description: Ubah data monitoring.
       parameters:
       - description: Masukan ID
         in: path
@@ -304,21 +304,21 @@ paths:
         name: request
         required: true
         schema:
-          $ref: '#/definitions/controller.Presensi'
+          $ref: '#/definitions/controller.Monitoring'
       produces:
       - application/json
       responses:
         "200":
           description: OK
           schema:
-            $ref: '#/definitions/controller.Presensi'
+            $ref: '#/definitions/controller.Monitoring'
         "400":
           description: Bad Request
         "500":
           description: Internal Server Error
-      summary: Update data presensi.
+      summary: Update data monitoring.
       tags:
-      - Presensi
+      - Monitoring
 schemes:
 - http
 - https

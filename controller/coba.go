@@ -483,6 +483,18 @@ func InsertDataMonitoring(c *fiber.Ctx) error {
 }
 
 // Update Monitoring
+// UpdateData godoc
+// @Summary Update data monitoring.
+// @Description Ubah data monitoring.
+// @Tags Monitoring
+// @Accept json
+// @Produce json
+// @Param id path string true "Masukan ID"
+// @Param request body Monitoring true "Payload Body [RAW]"
+// @Success 200 {object} Monitoring
+// @Failure 400
+// @Failure 500
+// @Router /upd/{id} [put]
 func UpdateDataMonitoring(c *fiber.Ctx) error {
 	db := config.Ulbimongoconn
 
