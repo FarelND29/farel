@@ -24,7 +24,7 @@ func Web(page *fiber.App) {
 	page.Get("/all-monitoring", controller.GetAllMonitoring)
 	page.Post("/ins/monitoring", controller.InsertDataMonitoring)
 	page.Put("/upd/monitoring/:id", controller.UpdateDataMonitoring)
-	page.Delete("/del-monitoring/:id", controller.DeleteMonitoringByID)
+	page.Delete("/del/monitoring/:id", controller.DeleteMonitoringByID)
 	// END POINT MAHASISWA
 	page.Get("/mahasiswa/:id", controller.GetMahasiswaID)
 	page.Get("/all-mahasiswa", controller.GetAllMahasiswa)
