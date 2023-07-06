@@ -37,4 +37,5 @@ func Web(page *fiber.App) {
 	//END POINT TEMA
 	page.Get("/tema/:id", controller.GetTemaID)
 	page.Get("/all-tema", controller.GetAllTema)
+	
 }
