@@ -1,5 +1,18 @@
 basePath: /
 definitions:
+  controller.DosenWali:
+    properties:
+      _id:
+        type: string
+      alamat:
+        type: string
+      email:
+        type: string
+      nama_dosen:
+        type: string
+      phone_number:
+        type: string
+    type: object
   controller.JamKerja:
     properties:
       durasi:
@@ -63,6 +76,45 @@ definitions:
         example: "08123456789"
         type: string
     type: object
+  controller.Mahasiswa:
+    properties:
+      _id:
+        type: string
+      jekel:
+        type: string
+      nama:
+        type: string
+      npm:
+        type: integer
+      phone_number:
+        type: string
+    type: object
+  controller.Monitoring:
+    properties:
+      _id:
+        type: string
+      dosen:
+        $ref: '#/definitions/controller.DosenWali'
+      hari:
+        type: string
+      ortu:
+        $ref: '#/definitions/controller.OrangTua'
+      tanggal:
+        type: string
+      tema:
+        $ref: '#/definitions/controller.Tema'
+    type: object
+  controller.OrangTua:
+    properties:
+      _id:
+        type: string
+      anak:
+        $ref: '#/definitions/controller.Mahasiswa'
+      nama_ot:
+        type: string
+      phone_number:
+        type: string
+    type: object
   controller.Presensi:
     properties:
       biodata:
@@ -84,6 +136,13 @@ definitions:
         type: number
       phone_number:
         example: "08123456789"
+        type: string
+    type: object
+  controller.Tema:
+    properties:
+      _id:
+        type: string
+      nama_tema:
         type: string
     type: object
 host: farel-app.herokuapp.com
@@ -145,6 +204,21 @@ paths:
       summary: Insert data presensi.
       tags:
       - Presensi
+  /monitoring:
+    get:
+      consumes:
+      - application/json
+      description: Mengambil semua data presensi.
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/controller.Monitoring'
+      summary: Get All Data Monitoring.
+      tags:
+      - Monitoring
   /presensi:
     get:
       consumes:

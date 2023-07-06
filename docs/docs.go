@@ -95,6 +95,29 @@ const docTemplate = `{
                 }
             }
         },
+        "/monitoring": {
+            "get": {
+                "description": "Mengambil semua data presensi.",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Monitoring"
+                ],
+                "summary": "Get All Data Monitoring.",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/controller.Monitoring"
+                        }
+                    }
+                }
+            }
+        },
         "/presensi": {
             "get": {
                 "description": "Mengambil semua data presensi.",
@@ -208,6 +231,26 @@ const docTemplate = `{
         }
     },
     "definitions": {
+        "controller.DosenWali": {
+            "type": "object",
+            "properties": {
+                "_id": {
+                    "type": "string"
+                },
+                "alamat": {
+                    "type": "string"
+                },
+                "email": {
+                    "type": "string"
+                },
+                "nama_dosen": {
+                    "type": "string"
+                },
+                "phone_number": {
+                    "type": "string"
+                }
+            }
+        },
         "controller.JamKerja": {
             "type": "object",
             "properties": {
@@ -291,6 +334,66 @@ const docTemplate = `{
                 }
             }
         },
+        "controller.Mahasiswa": {
+            "type": "object",
+            "properties": {
+                "_id": {
+                    "type": "string"
+                },
+                "jekel": {
+                    "type": "string"
+                },
+                "nama": {
+                    "type": "string"
+                },
+                "npm": {
+                    "type": "integer"
+                },
+                "phone_number": {
+                    "type": "string"
+                }
+            }
+        },
+        "controller.Monitoring": {
+            "type": "object",
+            "properties": {
+                "_id": {
+                    "type": "string"
+                },
+                "dosen": {
+                    "$ref": "#/definitions/controller.DosenWali"
+                },
+                "hari": {
+                    "type": "string"
+                },
+                "ortu": {
+                    "$ref": "#/definitions/controller.OrangTua"
+                },
+                "tanggal": {
+                    "type": "string"
+                },
+                "tema": {
+                    "$ref": "#/definitions/controller.Tema"
+                }
+            }
+        },
+        "controller.OrangTua": {
+            "type": "object",
+            "properties": {
+                "_id": {
+                    "type": "string"
+                },
+                "anak": {
+                    "$ref": "#/definitions/controller.Mahasiswa"
+                },
+                "nama_ot": {
+                    "type": "string"
+                },
+                "phone_number": {
+                    "type": "string"
+                }
+            }
+        },
         "controller.Presensi": {
             "type": "object",
             "properties": {
@@ -318,6 +421,17 @@ const docTemplate = `{
                 "phone_number": {
                     "type": "string",
                     "example": "08123456789"
+                }
+            }
+        },
+        "controller.Tema": {
+            "type": "object",
+            "properties": {
+                "_id": {
+                    "type": "string"
+                },
+                "nama_tema": {
+                    "type": "string"
                 }
             }
         }
