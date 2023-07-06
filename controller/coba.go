@@ -440,9 +440,6 @@ func UpdateData(c *fiber.Ctx) error {
 		"message": "Data successfully updated",
 	})
 }
-
-
-// Insert data monitoring orang tua
 // InsertData godoc
 // @Summary Insert data monitoring.
 // @Description Input data monitoring.
@@ -481,8 +478,6 @@ func InsertDataMonitoring(c *fiber.Ctx) error {
 		"inserted_id": insertedID,
 	})
 }
-
-// Update Monitoring
 // UpdateData godoc
 // @Summary Update data monitoring.
 // @Description Ubah data monitoring.
