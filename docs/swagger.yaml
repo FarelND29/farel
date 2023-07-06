@@ -155,6 +155,21 @@ info:
   title: Swagger Example API
   version: "1.0"
 paths:
+  /all-monitoring:
+    get:
+      consumes:
+      - application/json
+      description: Mengambil semua data presensi.
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/controller.Monitoring'
+      summary: Get All Data Monitoring.
+      tags:
+      - Monitoring
   /delete/{id}:
     delete:
       consumes:
@@ -204,21 +219,6 @@ paths:
       summary: Insert data presensi.
       tags:
       - Presensi
-  /monitoring:
-    get:
-      consumes:
-      - application/json
-      description: Mengambil semua data presensi.
-      produces:
-      - application/json
-      responses:
-        "200":
-          description: OK
-          schema:
-            $ref: '#/definitions/controller.Monitoring'
-      summary: Get All Data Monitoring.
-      tags:
-      - Monitoring
   /presensi:
     get:
       consumes:

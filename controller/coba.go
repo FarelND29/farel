@@ -259,7 +259,7 @@ func GetTemaID(c *fiber.Ctx) error {
 // @Accept json
 // @Produce json
 // @Success 200 {object} Monitoring
-// @Router /monitoring [get]
+// @Router /all-monitoring [get]
 func GetAllMonitoring(c *fiber.Ctx) error {
 	ps := inimodul.GetAllMonitoring(config.Ulbimongoconn, "monitoring")
 	return c.JSON(ps)
