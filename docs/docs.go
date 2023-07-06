@@ -80,7 +80,7 @@ const docTemplate = `{
         },
         "/ins": {
             "post": {
-                "description": "Input data presensi.",
+                "description": "Input data monitoring.",
                 "consumes": [
                     "application/json"
                 ],
@@ -88,9 +88,9 @@ const docTemplate = `{
                     "application/json"
                 ],
                 "tags": [
-                    "Presensi"
+                    "Monitoring"
                 ],
-                "summary": "Insert data presensi.",
+                "summary": "Insert data monitoring.",
                 "parameters": [
                     {
                         "description": "Payload Body [RAW]",
@@ -98,7 +98,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/controller.Presensi"
+                            "$ref": "#/definitions/controller.Monitoring"
                         }
                     }
                 ],
@@ -106,7 +106,7 @@ const docTemplate = `{
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/controller.Presensi"
+                            "$ref": "#/definitions/controller.Monitoring"
                         }
                     },
                     "400": {

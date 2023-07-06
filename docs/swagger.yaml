@@ -197,28 +197,28 @@ paths:
     post:
       consumes:
       - application/json
-      description: Input data presensi.
+      description: Input data monitoring.
       parameters:
       - description: Payload Body [RAW]
         in: body
         name: request
         required: true
         schema:
-          $ref: '#/definitions/controller.Presensi'
+          $ref: '#/definitions/controller.Monitoring'
       produces:
       - application/json
       responses:
         "200":
           description: OK
           schema:
-            $ref: '#/definitions/controller.Presensi'
+            $ref: '#/definitions/controller.Monitoring'
         "400":
           description: Bad Request
         "500":
           description: Internal Server Error
-      summary: Insert data presensi.
+      summary: Insert data monitoring.
       tags:
-      - Presensi
+      - Monitoring
   /monitoring/{id}:
     get:
       consumes:
