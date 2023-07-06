@@ -22,9 +22,9 @@ func Web(page *fiber.App) {
 	// END PONT MONITORING
 	page.Get("/monitoring/:id", controller.GetMonitoringID)
 	page.Get("/all-monitoring", controller.GetAllMonitoring)
-	page.Post("/monitoring", controller.InsertDataMonitoring)
-	page.Put("/monitoring/:id", controller.UpdateDataMonitoring)
-	page.Delete("/monitoring/:id", controller.DeleteMonitoringByID)
+	page.Post("/ins/monitoring", controller.InsertDataMonitoring)
+	page.Put("/upd/monitoring/:id", controller.UpdateDataMonitoring)
+	page.Delete("/del/monitoring/:id", controller.DeleteMonitoringByID)
 	// END POINT MAHASISWA
 	page.Get("/mahasiswa/:id", controller.GetMahasiswaID)
 	page.Get("/all-mahasiswa", controller.GetAllMahasiswa)
