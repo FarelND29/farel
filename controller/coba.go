@@ -453,7 +453,7 @@ func UpdateData(c *fiber.Ctx) error {
 // @Success 200 {object} Monitoring
 // @Failure 400
 // @Failure 500
-// @Router /ins [post]
+// @Router /ins/monitoring [post]
 func InsertDataMonitoring(c *fiber.Ctx) error {
 	db := config.Ulbimongoconn
 	var monitoring inimodel1.Monitoring
@@ -494,7 +494,7 @@ func InsertDataMonitoring(c *fiber.Ctx) error {
 // @Success 200 {object} Monitoring
 // @Failure 400
 // @Failure 500
-// @Router /upd/{id} [put]
+// @Router /upd/monitoring{id} [put]
 func UpdateDataMonitoring(c *fiber.Ctx) error {
 	db := config.Ulbimongoconn
 
