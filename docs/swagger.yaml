@@ -170,6 +170,29 @@ paths:
       summary: Get All Data Monitoring.
       tags:
       - Monitoring
+  /del/monitoring{id}:
+    delete:
+      consumes:
+      - application/json
+      description: Hapus data monitoring.
+      parameters:
+      - description: Masukan ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+        "400":
+          description: Bad Request
+        "500":
+          description: Internal Server Error
+      summary: Delete data monitoring.
+      tags:
+      - Monitoring
   /delete/{id}:
     delete:
       consumes:
