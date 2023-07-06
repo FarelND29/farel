@@ -82,29 +82,174 @@ func GetPresensiID(c *fiber.Ctx) error {
 	return c.JSON(ps)
 }
 
-func GetMonitoring(c *fiber.Ctx) error {
+/* func GetMonitoring(c *fiber.Ctx) error {
 	ps := inimodul.GetMonitoringFromNamaMahasiswa(config.Ulbimongoconn, "monitoring", "Farel")
 	return c.JSON(ps)
 }
+ */
 
-func GetMahasiswa(c *fiber.Ctx) error {
-	ps := inimodul.GetMahasiswaFromNpm(config.Ulbimongoconn, "mahasiswa", 1214070)
-	return c.JSON(ps)
+ func GetMonitoringID(c *fiber.Ctx) error {
+	id := c.Params("id")
+	if id == "" {
+		return c.Status(http.StatusInternalServerError).JSON(fiber.Map{
+			"status":  http.StatusInternalServerError,
+			"message": "Wrong parameter",
+		})
+	}
+
+	objID, err := primitive.ObjectIDFromHex(id)
+	if err != nil {
+		return c.Status(http.StatusBadRequest).JSON(fiber.Map{
+			"status":  http.StatusBadRequest,
+			"message": "Invalid id parameter",
+		})
+	}
+
+	mt, err := inimodul.GetMonitoringFromID(objID, config.Ulbimongoconn, "monitoring")
+	if err != nil {
+		if errors.Is(err, mongo.ErrNoDocuments) {
+			return c.Status(http.StatusNotFound).JSON(fiber.Map{
+				"status":  http.StatusNotFound,
+				"message": fmt.Sprintf("No data found for id %s", id),
+			})
+		}
+		return c.Status(http.StatusInternalServerError).JSON(fiber.Map{
+			"status":  http.StatusInternalServerError,
+			"message": fmt.Sprintf("Error retrieving data for id %s", id),
+		})
+	}
+	return c.JSON(mt)
+}
+func GetMahasiswaID(c *fiber.Ctx) error {
+	id := c.Params("id")
+	if id == "" {
+		return c.Status(http.StatusInternalServerError).JSON(fiber.Map{
+			"status":  http.StatusInternalServerError,
+			"message": "Wrong parameter",
+		})
+	}
+
+	objID, err := primitive.ObjectIDFromHex(id)
+	if err != nil {
+		return c.Status(http.StatusBadRequest).JSON(fiber.Map{
+			"status":  http.StatusBadRequest,
+			"message": "Invalid id parameter",
+		})
+	}
+
+	ms, err := inimodul.GetMahasiswaFromID(objID, config.Ulbimongoconn, "mahasiswa")
+	if err != nil {
+		if errors.Is(err, mongo.ErrNoDocuments) {
+			return c.Status(http.StatusNotFound).JSON(fiber.Map{
+				"status":  http.StatusNotFound,
+				"message": fmt.Sprintf("No data found for id %s", id),
+			})
+		}
+		return c.Status(http.StatusInternalServerError).JSON(fiber.Map{
+			"status":  http.StatusInternalServerError,
+			"message": fmt.Sprintf("Error retrieving data for id %s", id),
+		})
+	}
+	return c.JSON(ms)
 }
 
-func GetOrangTua(c *fiber.Ctx) error {
-	ps := inimodul.GetOrangTuaFromNamaMahasiswa(config.Ulbimongoconn, "orangtua", "toni")
-	return c.JSON(ps)
+func GetOrangTuaID(c *fiber.Ctx) error {
+	id := c.Params("id")
+	if id == "" {
+		return c.Status(http.StatusInternalServerError).JSON(fiber.Map{
+			"status":  http.StatusInternalServerError,
+			"message": "Wrong parameter",
+		})
+	}
+
+	objID, err := primitive.ObjectIDFromHex(id)
+	if err != nil {
+		return c.Status(http.StatusBadRequest).JSON(fiber.Map{
+			"status":  http.StatusBadRequest,
+			"message": "Invalid id parameter",
+		})
+	}
+
+	ot, err := inimodul.GetOrangTuaFromID(objID, config.Ulbimongoconn, "orangtua")
+	if err != nil {
+		if errors.Is(err, mongo.ErrNoDocuments) {
+			return c.Status(http.StatusNotFound).JSON(fiber.Map{
+				"status":  http.StatusNotFound,
+				"message": fmt.Sprintf("No data found for id %s", id),
+			})
+		}
+		return c.Status(http.StatusInternalServerError).JSON(fiber.Map{
+			"status":  http.StatusInternalServerError,
+			"message": fmt.Sprintf("Error retrieving data for id %s", id),
+		})
+	}
+	return c.JSON(ot)
 }
 
-func GetDosenWali(c *fiber.Ctx) error {
-	ps := inimodul.GetDosenWaliFromNamaDosen(config.Ulbimongoconn, "dosenwali", "Fatimah")
-	return c.JSON(ps)
+func GetDosenWaliID(c *fiber.Ctx) error {
+	id := c.Params("id")
+	if id == "" {
+		return c.Status(http.StatusInternalServerError).JSON(fiber.Map{
+			"status":  http.StatusInternalServerError,
+			"message": "Wrong parameter",
+		})
+	}
+
+	objID, err := primitive.ObjectIDFromHex(id)
+	if err != nil {
+		return c.Status(http.StatusBadRequest).JSON(fiber.Map{
+			"status":  http.StatusBadRequest,
+			"message": "Invalid id parameter",
+		})
+	}
+
+	dw, err := inimodul.GetDosenWaliFromID(objID, config.Ulbimongoconn, "dosenwali")
+	if err != nil {
+		if errors.Is(err, mongo.ErrNoDocuments) {
+			return c.Status(http.StatusNotFound).JSON(fiber.Map{
+				"status":  http.StatusNotFound,
+				"message": fmt.Sprintf("No data found for id %s", id),
+			})
+		}
+		return c.Status(http.StatusInternalServerError).JSON(fiber.Map{
+			"status":  http.StatusInternalServerError,
+			"message": fmt.Sprintf("Error retrieving data for id %s", id),
+		})
+	}
+	return c.JSON(dw)
 }
 
-func GetTema(c *fiber.Ctx) error {
-	ps := inimodul.GetTemaFromNamaTema(config.Ulbimongoconn, "tema", "Kewirausahaan")
-	return c.JSON(ps)
+func GetTemaID(c *fiber.Ctx) error {
+	id := c.Params("id")
+	if id == "" {
+		return c.Status(http.StatusInternalServerError).JSON(fiber.Map{
+			"status":  http.StatusInternalServerError,
+			"message": "Wrong parameter",
+		})
+	}
+
+	objID, err := primitive.ObjectIDFromHex(id)
+	if err != nil {
+		return c.Status(http.StatusBadRequest).JSON(fiber.Map{
+			"status":  http.StatusBadRequest,
+			"message": "Invalid id parameter",
+		})
+	}
+
+	tm, err := inimodul.GetTemaFromID(objID, config.Ulbimongoconn, "tema")
+	if err != nil {
+		if errors.Is(err, mongo.ErrNoDocuments) {
+			return c.Status(http.StatusNotFound).JSON(fiber.Map{
+				"status":  http.StatusNotFound,
+				"message": fmt.Sprintf("No data found for id %s", id),
+			})
+		}
+		return c.Status(http.StatusInternalServerError).JSON(fiber.Map{
+			"status":  http.StatusInternalServerError,
+			"message": fmt.Sprintf("Error retrieving data for id %s", id),
+		})
+	}
+	return c.JSON(tm)
 }
 
 func GetAllMonitoring(c *fiber.Ctx) error {
@@ -305,5 +450,83 @@ func InsertDataMonitoring(c *fiber.Ctx) error {
 		"status":      http.StatusOK,
 		"message":     "Data berhasil disimpan.",
 		"inserted_id": insertedID,
+	})
+}
+
+// Update Monitoring
+func UpdateDataMonitoring(c *fiber.Ctx) error {
+	db := config.Ulbimongoconn
+
+	// Get the ID from the URL parameter
+	id := c.Params("id")
+
+	// Parse the ID into an ObjectID
+	objectID, err := primitive.ObjectIDFromHex(id)
+	if err != nil {
+		return c.Status(http.StatusInternalServerError).JSON(fiber.Map{
+			"status":  http.StatusInternalServerError,
+			"message": err.Error(),
+		})
+	}
+
+	// Parse the request body into a Presensi object
+	var monitoring inimodel1.Monitoring
+	if err := c.BodyParser(&monitoring); err != nil {
+		return c.Status(http.StatusInternalServerError).JSON(fiber.Map{
+			"status":  http.StatusInternalServerError,
+			"message": err.Error(),
+		})
+	}
+
+	// Call the UpdatePresensi function with the parsed ID and the Presensi object
+	err = inimodul.UpdateMonitoring(db, "presensi",
+		objectID,
+		monitoring.OrangTua,
+		monitoring.Tema,
+		monitoring.Dosen,
+		monitoring.Tanggal,
+		monitoring.Hari,)
+	if err != nil {
+		return c.Status(http.StatusInternalServerError).JSON(fiber.Map{
+			"status":  http.StatusInternalServerError,
+			"message": err.Error(),
+		})
+	}
+
+	return c.Status(http.StatusOK).JSON(fiber.Map{
+		"status":  http.StatusOK,
+		"message": "Data successfully updated",
+	})
+}
+
+//Delete MOnitoring
+func DeleteMonitoringByID(c *fiber.Ctx) error {
+	id := c.Params("id")
+	if id == "" {
+		return c.Status(http.StatusInternalServerError).JSON(fiber.Map{
+			"status":  http.StatusInternalServerError,
+			"message": "Wrong parameter",
+		})
+	}
+
+	objID, err := primitive.ObjectIDFromHex(id)
+	if err != nil {
+		return c.Status(http.StatusBadRequest).JSON(fiber.Map{
+			"status":  http.StatusBadRequest,
+			"message": "Invalid id parameter",
+		})
+	}
+
+	err = inimodul.DeleteMonitoringByID(objID, config.Ulbimongoconn, "monitoring")
+	if err != nil {
+		return c.Status(http.StatusInternalServerError).JSON(fiber.Map{
+			"status":  http.StatusInternalServerError,
+			"message": fmt.Sprintf("Error deleting data for id %s", id),
+		})
+	}
+
+	return c.Status(http.StatusOK).JSON(fiber.Map{
+		"status":  http.StatusOK,
+		"message": fmt.Sprintf("Data with id %s deleted successfully", id),
 	})
 }

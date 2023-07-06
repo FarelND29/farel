@@ -3,7 +3,7 @@ module github.com/FarelND29/farel
 go 1.20
 
 require (
-	github.com/FarelND29/monitoring_orang_tua v0.0.13
+	github.com/FarelND29/monitoring_orang_tua v0.0.15
 	github.com/aiteung/atdb v0.0.10
 	github.com/aiteung/musik v0.0.5
 	github.com/aiteung/presensi v0.0.34
