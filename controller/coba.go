@@ -252,16 +252,14 @@ func GetTemaID(c *fiber.Ctx) error {
 	}
 	return c.JSON(tm)
 }
-
-
-// GetAllPresensi godoc
-// @Summary Get All Data Presensi.
+// GetAllMonitoring godoc
+// @Summary Get All Data Monitoring.
 // @Description Mengambil semua data presensi.
-// @Tags Presensi
+// @Tags Monitoring
 // @Accept json
 // @Produce json
-// @Success 200 {object} Presensi
-// @Router /presensi [get]
+// @Success 200 {object} Monitoring
+// @Router /monitoring [get]
 func GetAllMonitoring(c *fiber.Ctx) error {
 	ps := inimodul.GetAllMonitoring(config.Ulbimongoconn, "monitoring")
 	return c.JSON(ps)
