@@ -88,7 +88,18 @@ func GetPresensiID(c *fiber.Ctx) error {
 	return c.JSON(ps)
 }
  */
-
+// GetMonitoringID godoc
+// @Summary Get By ID Data Monitoring.
+// @Description Ambil per ID data monitoring.
+// @Tags Monitoring
+// @Accept json
+// @Produce json
+// @Param id path string true "Masukan ID"
+// @Success 200 {object} Monitoring
+// @Failure 400
+// @Failure 404
+// @Failure 500
+// @Router /monitoring/{id} [get]
  func GetMonitoringID(c *fiber.Ctx) error {
 	id := c.Params("id")
 	if id == "" {
