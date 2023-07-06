@@ -48,38 +48,38 @@ type Geometry struct {
 // struct monitoring orang tua
 
 type Mahasiswa struct {
-	ID           primitive.ObjectID `bson:"_id,omitempty" json:"_id,omitempty"`
-	Nama         string             `bson:"nama,omitempty" json:"nama,omitempty"`
-	NPM          int                `bson:"npm,omitempty" json:"npm,omitempty"`
-	Jekel        string             `bson:"jekel,omitempty" json:"jekel,omitempty"`
-	Phone_number string             `bson:"phone_number,omitempty" json:"phone_number,omitempty"`
+	/* ID           primitive.ObjectID `bson:"_id,omitempty" json:"_id,omitempty"` */
+	Nama         string             `bson:"nama,omitempty" json:"nama,omitempty" example:"Farel"`
+	NPM          int                `bson:"npm,omitempty" json:"npm,omitempty" example:"1214070"`
+	Jekel        string             `bson:"jekel,omitempty" json:"jekel,omitempty" example:"laki-laki"`
+	Phone_number string             `bson:"phone_number,omitempty" json:"phone_number,omitempty" example:"083821157026"`
 }
 
 type OrangTua struct {
-	ID           primitive.ObjectID `bson:"_id,omitempty" json:"_id,omitempty"`
-	Nama_OT      string             `bson:"nama_ot,omitempty" json:"nama_ot,omitempty"`
-	Phone_number string             `bson:"phone_number,omitempty" json:"phone_number,omitempty"`
-	Anak         Mahasiswa          `bson:"anak,omitempty" json:"anak,omitempty"`
+	/* ID           primitive.ObjectID `bson:"_id,omitempty" json:"_id,omitempty"` */
+	Nama_OT      string             `bson:"nama_ot,omitempty" json:"nama_ot,omitempty" example:"Rini"`
+	Phone_number string             `bson:"phone_number,omitempty" json:"phone_number,omitempty" example:"083821157029"`
+	Anak         Mahasiswa          `bson:"anak,omitempty" json:"anak,omitempty" example:"Farel"`
 }
 
 type DosenWali struct {
-	ID           primitive.ObjectID `bson:"_id,omitempty" json:"_id,omitempty"`
-	Nama_Dosen   string             `bson:"nama_dosen,omitempty" json:"nama_dosen,omitempty"`
-	Alamat       string             `bson:"alamat,omitempty" json:"alamat,omitempty"`
-	Phone_number string             `bson:"phone_number,omitempty" json:"phone_number,omitempty"`
-	Email        string             `bson:"email,omitempty" json:"email,omitempty"`
+	/* ID           primitive.ObjectID `bson:"_id,omitempty" json:"_id,omitempty"` */
+	Nama_Dosen   string             `bson:"nama_dosen,omitempty" json:"nama_dosen,omitempty" example:"Roni"`
+	Alamat       string             `bson:"alamat,omitempty" json:"alamat,omitempty" example:"jl.delima"`
+	Phone_number string             `bson:"phone_number,omitempty" json:"phone_number,omitempty" example:"08917271575"`
+	Email        string             `bson:"email,omitempty" json:"email,omitempty" example:"roni12@gmail.com"`
 }
 
 type Tema struct {
-	ID        primitive.ObjectID `bson:"_id,omitempty" json:"_id,omitempty"`
-	Nama_Tema string             `bson:"nama_tema,omitempty" json:"nama_tema,omitempty"`
+	/* ID        primitive.ObjectID `bson:"_id,omitempty" json:"_id,omitempty"` */
+	Nama_Tema string             `bson:"nama_tema,omitempty" json:"nama_tema,omitempty" example:"web"`
 }
 
 type Monitoring struct {
-	ID       primitive.ObjectID `bson:"_id,omitempty" json:"_id,omitempty"`
-	OrangTua OrangTua           `bson:"ortu,omitempty" json:"ortu,omitempty"`
-	Tema     Tema               `bson:"tema,omitempty" json:"tema,omitempty"`
-	Dosen    DosenWali          `bson:"dosen,omitempty" json:"dosen,omitempty"`
-	Tanggal  string             `bson:"tanggal,omitempty" json:"tanggal,omitempty"`
-	Hari     string             `bson:"hari,omitempty" json:"hari,omitempty"`
+	/* ID       primitive.ObjectID `bson:"_id,omitempty" json:"_id,omitempty"` */
+	OrangTua OrangTua           `bson:"ortu,omitempty" json:"ortu,omitempty" example:"Rini"`
+	Tema     Tema               `bson:"tema,omitempty" json:"tema,omitempty" example:"web"`
+	Dosen    DosenWali          `bson:"dosen,omitempty" json:"dosen,omitempty" example:"Roni"`
+	Tanggal  string             `bson:"tanggal,omitempty" json:"tanggal,omitempty" example:"12-2-2023"`
+	Hari     string             `bson:"hari,omitempty" json:"hari,omitempty" example:"Senin"`
 }
