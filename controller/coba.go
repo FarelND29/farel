@@ -253,6 +253,15 @@ func GetTemaID(c *fiber.Ctx) error {
 	return c.JSON(tm)
 }
 
+
+// GetAllPresensi godoc
+// @Summary Get All Data Presensi.
+// @Description Mengambil semua data presensi.
+// @Tags Presensi
+// @Accept json
+// @Produce json
+// @Success 200 {object} Presensi
+// @Router /presensi [get]
 func GetAllMonitoring(c *fiber.Ctx) error {
 	ps := inimodul.GetAllMonitoring(config.Ulbimongoconn, "monitoring")
 	return c.JSON(ps)
@@ -531,3 +540,4 @@ func DeleteMonitoringByID(c *fiber.Ctx) error {
 		"message": fmt.Sprintf("Data with id %s deleted successfully", id),
 	})
 }
+
