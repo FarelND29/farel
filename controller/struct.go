@@ -46,6 +46,7 @@ type Geometry struct {
 	Coordinates interface{} `json:"coordinates" bson:"coordinates"`
 }
 // struct monitoring orang tua
+
 type Mahasiswa struct {
 	ID           primitive.ObjectID `bson:"_id,omitempty" json:"_id,omitempty"`
 	Nama         string             `bson:"nama,omitempty" json:"nama,omitempty"`

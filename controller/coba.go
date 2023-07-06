@@ -263,6 +263,7 @@ func GetTemaID(c *fiber.Ctx) error {
 	}
 	return c.JSON(tm)
 }
+
 // GetAllMonitoring godoc
 // @Summary Get All Data Monitoring.
 // @Description Mengambil semua data presensi.
@@ -440,6 +441,7 @@ func UpdateData(c *fiber.Ctx) error {
 		"message": "Data successfully updated",
 	})
 }
+
 // InsertData godoc
 // @Summary Insert data monitoring.
 // @Description Input data monitoring.
@@ -478,6 +480,7 @@ func InsertDataMonitoring(c *fiber.Ctx) error {
 		"inserted_id": insertedID,
 	})
 }
+
 // UpdateData godoc
 // @Summary Update data monitoring.
 // @Description Ubah data monitoring.
@@ -534,6 +537,7 @@ func UpdateDataMonitoring(c *fiber.Ctx) error {
 		"message": "Data successfully updated",
 	})
 }
+
 // DeleteMonitoringByID godoc
 // @Summary Delete data monitoring.
 // @Description Hapus data monitoring.
