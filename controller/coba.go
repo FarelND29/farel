@@ -442,6 +442,17 @@ func UpdateData(c *fiber.Ctx) error {
 	})
 }
 
+// InsertDataMonitoring godoc
+// @Summary Insert data monitoring.
+// @Description Input data monitoring.
+// @Tags Monitoring
+// @Accept json
+// @Produce json
+// @Param request body Monitoring true "Payload Body [RAW]"
+// @Success 200 {object} Monitoring
+// @Failure 400
+// @Failure 500
+// @Router /ins/monitoring [post]
 func InsertDataMonitoring(c *fiber.Ctx) error {
 	db := config.Ulbimongoconn
 	var monitoring inimodel1.Monitoring
