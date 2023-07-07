@@ -359,7 +359,7 @@ paths:
       summary: Update data presensi.
       tags:
       - Presensi
-  /upd/monitoring{id}:
+  /upd/monitoring/{id}:
     put:
       consumes:
       - application/json

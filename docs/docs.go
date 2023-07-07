@@ -263,7 +263,7 @@ const docTemplate = `{
                 }
             }
         },
-        "/upd/monitoring{id}": {
+        "/upd/monitoring/{id}": {
             "put": {
                 "description": "Ubah data monitoring.",
                 "consumes": [

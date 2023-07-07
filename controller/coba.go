@@ -492,7 +492,7 @@ func InsertDataMonitoring(c *fiber.Ctx) error {
 // @Success 200 {object} Monitoring
 // @Failure 400
 // @Failure 500
-// @Router /upd/monitoring{id} [put]
+// @Router /upd/monitoring/{id} [put]
 func UpdateDataMonitoring(c *fiber.Ctx) error {
 	db := config.Ulbimongoconn
 
@@ -508,7 +508,7 @@ func UpdateDataMonitoring(c *fiber.Ctx) error {
 		})
 	}
 
-	// Parse the request body into a Presensi object
+	// Parse the request body into a Monitoring object
 	var monitoring inimodel1.Monitoring
 	if err := c.BodyParser(&monitoring); err != nil {
 		return c.Status(http.StatusInternalServerError).JSON(fiber.Map{
