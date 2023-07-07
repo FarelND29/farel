@@ -43,7 +43,7 @@ const docTemplate = `{
                 }
             }
         },
-        "/delete/monitoring/{id}": {
+        "/del/monitoring/{id}": {
             "delete": {
                 "description": "Hapus data monitoring.",
                 "consumes": [

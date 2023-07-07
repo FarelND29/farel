@@ -548,7 +548,7 @@ func UpdateDataMonitoring(c *fiber.Ctx) error {
 // @Success 200
 // @Failure 400
 // @Failure 500
-// @Router /delete/monitoring/{id} [delete]
+// @Router /del/monitoring/{id} [delete]
 func DeleteMonitoringByID(c *fiber.Ctx) error {
 	id := c.Params("id")
 	if id == "" {
