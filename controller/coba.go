@@ -538,6 +538,17 @@ func UpdateDataMonitoring(c *fiber.Ctx) error {
 	})
 }
 
+// DeleteMonitoringByID godoc
+// @Summary Delete data monitoring.
+// @Description Hapus data monitoring.
+// @Tags Monitoring
+// @Accept json
+// @Produce json
+// @Param id path string true "Masukan ID"
+// @Success 200
+// @Failure 400
+// @Failure 500
+// @Router /delete/monitoring/{id} [delete]
 func DeleteMonitoringByID(c *fiber.Ctx) error {
 	id := c.Params("id")
 	if id == "" {
