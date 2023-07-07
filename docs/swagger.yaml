@@ -2,9 +2,6 @@ basePath: /
 definitions:
   controller.DosenWali:
     properties:
-      _id:
-        example: "7686535656"
-        type: string
       alamat:
         example: Jalan Pengangsaan Timur
         type: string
@@ -12,6 +9,8 @@ definitions:
         example: megachan@gmail.cxt
         type: string
       nama_dosen:
+        description: ID           primitive.ObjectID `bson:"_id,omitempty" json:"_id,omitempty"
+          example:"7686535656"`
         example: Megawati
         type: string
       phone_number:
@@ -83,13 +82,12 @@ definitions:
     type: object
   controller.Mahasiswa:
     properties:
-      _id:
-        example: "123456789"
-        type: string
       jekel:
         example: Laki-Laki
         type: string
       nama:
+        description: ID           primitive.ObjectID `bson:"_id,omitempty" json:"_id,omitempty"
+          example:"123456789"`
         example: Ade Candra
         type: string
       npm:
@@ -101,16 +99,16 @@ definitions:
     type: object
   controller.Monitoring:
     properties:
-      _id:
-        example: "565455478"
-        type: string
       dosen:
         $ref: '#/definitions/controller.DosenWali'
       hari:
         example: jumat
         type: string
       ortu:
-        $ref: '#/definitions/controller.OrangTua'
+        allOf:
+        - $ref: '#/definitions/controller.OrangTua'
+        description: ID       primitive.ObjectID `bson:"_id,omitempty" json:"_id,omitempty"
+          example:"565455478"`
       tanggal:
         example: 17-08-1945
         type: string
@@ -119,12 +117,11 @@ definitions:
     type: object
   controller.OrangTua:
     properties:
-      _id:
-        example: "125436798"
-        type: string
       anak:
         $ref: '#/definitions/controller.Mahasiswa'
       nama_ot:
+        description: ID           primitive.ObjectID `bson:"_id,omitempty" json:"_id,omitempty"
+          example:"125436798"`
         example: Boy William
         type: string
       phone_number:
@@ -156,10 +153,9 @@ definitions:
     type: object
   controller.Tema:
     properties:
-      _id:
-        example: "5474574574"
-        type: string
       nama_tema:
+        description: ID        primitive.ObjectID `bson:"_id,omitempty" json:"_id,omitempty"
+          example:"5474574574"`
         example: penjajahan
         type: string
     type: object

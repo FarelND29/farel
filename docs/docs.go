@@ -315,10 +315,6 @@ const docTemplate = `{
         "controller.DosenWali": {
             "type": "object",
             "properties": {
-                "_id": {
-                    "type": "string",
-                    "example": "7686535656"
-                },
                 "alamat": {
                     "type": "string",
                     "example": "Jalan Pengangsaan Timur"
@@ -328,6 +324,7 @@ const docTemplate = `{
                     "example": "megachan@gmail.cxt"
                 },
                 "nama_dosen": {
+                    "description": "ID           primitive.ObjectID ` + "`" + `bson:\"_id,omitempty\" json:\"_id,omitempty\" example:\"7686535656\"` + "`" + `",
                     "type": "string",
                     "example": "Megawati"
                 },
@@ -423,15 +420,12 @@ const docTemplate = `{
         "controller.Mahasiswa": {
             "type": "object",
             "properties": {
-                "_id": {
-                    "type": "string",
-                    "example": "123456789"
-                },
                 "jekel": {
                     "type": "string",
                     "example": "Laki-Laki"
                 },
                 "nama": {
+                    "description": "ID           primitive.ObjectID ` + "`" + `bson:\"_id,omitempty\" json:\"_id,omitempty\" example:\"123456789\"` + "`" + `",
                     "type": "string",
                     "example": "Ade Candra"
                 },
@@ -448,10 +442,6 @@ const docTemplate = `{
         "controller.Monitoring": {
             "type": "object",
             "properties": {
-                "_id": {
-                    "type": "string",
-                    "example": "565455478"
-                },
                 "dosen": {
                     "$ref": "#/definitions/controller.DosenWali"
                 },
@@ -460,7 +450,12 @@ const docTemplate = `{
                     "example": "jumat"
                 },
                 "ortu": {
-                    "$ref": "#/definitions/controller.OrangTua"
+                    "description": "ID       primitive.ObjectID ` + "`" + `bson:\"_id,omitempty\" json:\"_id,omitempty\" example:\"565455478\"` + "`" + `",
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/controller.OrangTua"
+                        }
+                    ]
                 },
                 "tanggal": {
                     "type": "string",
@@ -474,14 +469,11 @@ const docTemplate = `{
         "controller.OrangTua": {
             "type": "object",
             "properties": {
-                "_id": {
-                    "type": "string",
-                    "example": "125436798"
-                },
                 "anak": {
                     "$ref": "#/definitions/controller.Mahasiswa"
                 },
                 "nama_ot": {
+                    "description": "ID           primitive.ObjectID ` + "`" + `bson:\"_id,omitempty\" json:\"_id,omitempty\" example:\"125436798\"` + "`" + `",
                     "type": "string",
                     "example": "Boy William"
                 },
@@ -524,11 +516,8 @@ const docTemplate = `{
         "controller.Tema": {
             "type": "object",
             "properties": {
-                "_id": {
-                    "type": "string",
-                    "example": "5474574574"
-                },
                 "nama_tema": {
+                    "description": "ID        primitive.ObjectID ` + "`" + `bson:\"_id,omitempty\" json:\"_id,omitempty\" example:\"5474574574\"` + "`" + `",
                     "type": "string",
                     "example": "penjajahan"
                 }
