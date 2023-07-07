@@ -316,19 +316,24 @@ const docTemplate = `{
             "type": "object",
             "properties": {
                 "_id": {
-                    "type": "string"
+                    "type": "string",
+                    "example": "7686535656"
                 },
                 "alamat": {
-                    "type": "string"
+                    "type": "string",
+                    "example": "Jalan Pengangsaan Timur"
                 },
                 "email": {
-                    "type": "string"
+                    "type": "string",
+                    "example": "megachan@gmail.cxt"
                 },
                 "nama_dosen": {
-                    "type": "string"
+                    "type": "string",
+                    "example": "Megawati"
                 },
                 "phone_number": {
-                    "type": "string"
+                    "type": "string",
+                    "example": "64545678734"
                 }
             }
         },
@@ -419,19 +424,24 @@ const docTemplate = `{
             "type": "object",
             "properties": {
                 "_id": {
-                    "type": "string"
+                    "type": "string",
+                    "example": "123456789"
                 },
                 "jekel": {
-                    "type": "string"
+                    "type": "string",
+                    "example": "Laki-Laki"
                 },
                 "nama": {
-                    "type": "string"
+                    "type": "string",
+                    "example": "Ade Candra"
                 },
                 "npm": {
-                    "type": "integer"
+                    "type": "integer",
+                    "example": 1214048
                 },
                 "phone_number": {
-                    "type": "string"
+                    "type": "string",
+                    "example": "0897653421"
                 }
             }
         },
@@ -439,19 +449,22 @@ const docTemplate = `{
             "type": "object",
             "properties": {
                 "_id": {
-                    "type": "string"
+                    "type": "string",
+                    "example": "565455478"
                 },
                 "dosen": {
                     "$ref": "#/definitions/controller.DosenWali"
                 },
                 "hari": {
-                    "type": "string"
+                    "type": "string",
+                    "example": "jumat"
                 },
                 "ortu": {
                     "$ref": "#/definitions/controller.OrangTua"
                 },
                 "tanggal": {
-                    "type": "string"
+                    "type": "string",
+                    "example": "17-08-1945"
                 },
                 "tema": {
                     "$ref": "#/definitions/controller.Tema"
@@ -462,16 +475,19 @@ const docTemplate = `{
             "type": "object",
             "properties": {
                 "_id": {
-                    "type": "string"
+                    "type": "string",
+                    "example": "125436798"
                 },
                 "anak": {
                     "$ref": "#/definitions/controller.Mahasiswa"
                 },
                 "nama_ot": {
-                    "type": "string"
+                    "type": "string",
+                    "example": "Boy William"
                 },
                 "phone_number": {
-                    "type": "string"
+                    "type": "string",
+                    "example": "8769765590"
                 }
             }
         },
@@ -509,10 +525,12 @@ const docTemplate = `{
             "type": "object",
             "properties": {
                 "_id": {
-                    "type": "string"
+                    "type": "string",
+                    "example": "5474574574"
                 },
                 "nama_tema": {
-                    "type": "string"
+                    "type": "string",
+                    "example": "penjajahan"
                 }
             }
         }

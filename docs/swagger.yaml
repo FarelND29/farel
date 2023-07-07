@@ -3,14 +3,19 @@ definitions:
   controller.DosenWali:
     properties:
       _id:
+        example: "7686535656"
         type: string
       alamat:
+        example: Jalan Pengangsaan Timur
         type: string
       email:
+        example: megachan@gmail.cxt
         type: string
       nama_dosen:
+        example: Megawati
         type: string
       phone_number:
+        example: "64545678734"
         type: string
     type: object
   controller.JamKerja:
@@ -79,27 +84,35 @@ definitions:
   controller.Mahasiswa:
     properties:
       _id:
+        example: "123456789"
         type: string
       jekel:
+        example: Laki-Laki
         type: string
       nama:
+        example: Ade Candra
         type: string
       npm:
+        example: 1214048
         type: integer
       phone_number:
+        example: "0897653421"
         type: string
     type: object
   controller.Monitoring:
     properties:
       _id:
+        example: "565455478"
         type: string
       dosen:
         $ref: '#/definitions/controller.DosenWali'
       hari:
+        example: jumat
         type: string
       ortu:
         $ref: '#/definitions/controller.OrangTua'
       tanggal:
+        example: 17-08-1945
         type: string
       tema:
         $ref: '#/definitions/controller.Tema'
@@ -107,12 +120,15 @@ definitions:
   controller.OrangTua:
     properties:
       _id:
+        example: "125436798"
         type: string
       anak:
         $ref: '#/definitions/controller.Mahasiswa'
       nama_ot:
+        example: Boy William
         type: string
       phone_number:
+        example: "8769765590"
         type: string
     type: object
   controller.Presensi:
@@ -141,8 +157,10 @@ definitions:
   controller.Tema:
     properties:
       _id:
+        example: "5474574574"
         type: string
       nama_tema:
+        example: penjajahan
         type: string
     type: object
 host: farel-app.herokuapp.com
