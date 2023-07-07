@@ -442,17 +442,6 @@ func UpdateData(c *fiber.Ctx) error {
 	})
 }
 
-// InsertData godoc
-// @Summary Insert data monitoring.
-// @Description Input data monitoring.
-// @Tags Monitoring
-// @Accept json
-// @Produce json
-// @Param request body Monitoring true "Payload Body [RAW]"
-// @Success 200 {object} Monitoring
-// @Failure 400
-// @Failure 500
-// @Router /ins/monitoring [post]
 func InsertDataMonitoring(c *fiber.Ctx) error {
 	db := config.Ulbimongoconn
 	var monitoring inimodel1.Monitoring
@@ -481,18 +470,6 @@ func InsertDataMonitoring(c *fiber.Ctx) error {
 	})
 }
 
-// UpdateData godoc
-// @Summary Update data monitoring.
-// @Description Ubah data monitoring.
-// @Tags Monitoring
-// @Accept json
-// @Produce json
-// @Param id path string true "Masukan ID"
-// @Param request body Monitoring true "Payload Body [RAW]"
-// @Success 200 {object} Monitoring
-// @Failure 400
-// @Failure 500
-// @Router /upd/monitoring{id} [put]
 func UpdateDataMonitoring(c *fiber.Ctx) error {
 	db := config.Ulbimongoconn
 
@@ -538,17 +515,6 @@ func UpdateDataMonitoring(c *fiber.Ctx) error {
 	})
 }
 
-// DeleteMonitoringByID godoc
-// @Summary Delete data monitoring.
-// @Description Hapus data monitoring.
-// @Tags Monitoring
-// @Accept json
-// @Produce json
-// @Param id path string true "Masukan ID"
-// @Success 200
-// @Failure 400
-// @Failure 500
-// @Router /del/monitoring{id} [delete]
 func DeleteMonitoringByID(c *fiber.Ctx) error {
 	id := c.Params("id")
 	if id == "" {
