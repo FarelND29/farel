@@ -980,6 +980,52 @@ func DeleteTemaByID(c *fiber.Ctx) error {
 	})
 }
 
+func SignUp(c *fiber.Ctx) error {
+	db := config.Ulbimongoconn
+	var data inimodel1.User
+	if err := c.BodyParser(&data); err != nil {
+		return c.Status(http.StatusInternalServerError).JSON(fiber.Map{
+			"status":  http.StatusInternalServerError,
+			"message": err.Error(),
+		})
+	}
+	_, err := inimodul.SignUp(db, "data_user", data)
+	if err != nil {
+		return c.Status(http.StatusInternalServerError).JSON(fiber.Map{
+			"status":  http.StatusInternalServerError,
+			"message": err.Error(),
+		})
+	}
+	return c.Status(http.StatusOK).JSON(fiber.Map{
+		"status":  http.StatusOK,
+		"message": "Akun berhasil disimpan.",
+	})
+}
+
+func SignIn(c *fiber.Ctx) error {
+	db := config.Ulbimongoconn
+	var data inimodel1.User
+	if err := c.BodyParser(&data); err != nil {
+		return c.Status(http.StatusInternalServerError).JSON(fiber.Map{
+			"status":  http.StatusInternalServerError,
+			"message": err.Error(),
+		})
+	}
+
+	email, err := inimodul.LogIn(db, "data_user", data)
+	if err != nil {
+		return c.Status(http.StatusInternalServerError).JSON(fiber.Map{
+			"status":  http.StatusInternalServerError,
+			"message": err.Error(),
+		})
+	}
+
+	return c.Status(http.StatusOK).JSON(fiber.Map{
+		"status":  http.StatusOK,
+		"message": "Selamat datang " + data.Fullname,
+		"email":   email,
+	})
+}
 
 
 

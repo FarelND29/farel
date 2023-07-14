@@ -3,7 +3,7 @@ module github.com/FarelND29/farel
 go 1.20
 
 require (
-	github.com/FarelND29/monitoring_orang_tua v0.0.16
+	github.com/FarelND29/monitoring_orang_tua v0.0.17
 	github.com/aiteung/atdb v0.0.10
 	github.com/aiteung/musik v0.0.5
 	github.com/aiteung/presensi v0.0.34
@@ -24,6 +24,7 @@ require (
 	github.com/aiteung/atmessage v0.0.17 // indirect
 	github.com/aiteung/atmodel v0.0.3 // indirect
 	github.com/andybalholm/brotli v1.0.5 // indirect
+	github.com/badoux/checkmail v1.2.1 // indirect
 	github.com/fasthttp/websocket v1.5.2 // indirect
 	github.com/go-openapi/jsonpointer v0.19.6 // indirect
 	github.com/go-openapi/jsonreference v0.20.2 // indirect
@@ -61,10 +62,10 @@ require (
 	github.com/youmark/pkcs8 v0.0.0-20201027041543-1326539a0a0a // indirect
 	go.mau.fi/libsignal v0.1.0 // indirect
 	go.mau.fi/whatsmeow v0.0.0-20230324171918-c7e156dca788 // indirect
-	golang.org/x/crypto v0.7.0 // indirect
+	golang.org/x/crypto v0.11.0 // indirect
 	golang.org/x/sync v0.2.0 // indirect
-	golang.org/x/sys v0.8.0 // indirect
-	golang.org/x/text v0.9.0 // indirect
+	golang.org/x/sys v0.10.0 // indirect
+	golang.org/x/text v0.11.0 // indirect
 	golang.org/x/tools v0.9.1 // indirect
 	google.golang.org/protobuf v1.30.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect

@@ -49,5 +49,8 @@ func Web(page *fiber.App) {
 	page.Post("/ins/tema", controller.InsertDataTema)
 	page.Put("/upd/tema/:id", controller.UpdateDataTema)
 	page.Delete("/del/tema/:id", controller.DeleteTemaByID)
+	//SIGNUP ENDPOINT
+	page.Post("/sign-up", controller.SignUp)
+	page.Post("/sign-in", controller.SignIn)
 	
 }
