@@ -28,14 +28,26 @@ func Web(page *fiber.App) {
 	// END POINT MAHASISWA
 	page.Get("/mahasiswa/:id", controller.GetMahasiswaID)
 	page.Get("/all-mahasiswa", controller.GetAllMahasiswa)
+	page.Post("/ins/mahasiswa", controller.InsertDataMahasiswa)
+	page.Put("/upd/mahasiswa/:id", controller.UpdateDataMahasiswa)
+	page.Delete("/del/mahasiswa/:id", controller.DeleteMahasiswaByID)
 	//END POINT ORANGTUA
 	page.Get("/orangtua/:id", controller.GetOrangTuaID)
 	page.Get("/all-orangtua", controller.GetAllOrangTua)
+	page.Post("/ins/orangtua", controller.InsertDataOrangTua)
+	page.Put("/upd/orangtua/:id", controller.UpdateDataOrangTua)
+	page.Delete("/del/orangtua/:id", controller.DeleteOrangTuaByID)
 	//END POINT DOSEN
 	page.Get("/dosenwali/:id", controller.GetDosenWaliID)
 	page.Get("/all-dosenwali", controller.GetAllDosenWali)
+	page.Post("/ins/dosenwali", controller.InsertDataDosenWali)
+	page.Put("/upd/dosenwali/:id", controller.UpdateDataDosenWali)
+	page.Delete("/del/dosenwali/:id", controller.DeleteDosenWaliByID)
 	//END POINT TEMA
 	page.Get("/tema/:id", controller.GetTemaID)
 	page.Get("/all-tema", controller.GetAllTema)
+	page.Post("/ins/tema", controller.InsertDataTema)
+	page.Put("/upd/tema/:id", controller.UpdateDataTema)
+	page.Delete("/del/tema/:id", controller.DeleteTemaByID)
 	
 }
